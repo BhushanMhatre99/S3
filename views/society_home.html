@@ -27,8 +27,6 @@
       });
 
 
-
-
     </script>
     <!-- Dashboard Core -->
     <link href="./assets/css/dashboard.css" rel="stylesheet"/>
@@ -49,10 +47,32 @@
             <div class="container">
                 <div class="d-flex">
                     <a class="header-brand" href="./index.html">
-                        <img src="img/profile.png" class="header-brand-img" alt="tabler logo">S3
+                        <img src="./demo/brand/company.png" class="header-brand-img" alt="tabler logo">Society Manager
                     </a>
+                    <div class="d-flex order-lg-2 ml-auto">
 
+                        <div class="dropdown">
+                            <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                                <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+                                <span class="ml-2 d-none d-lg-block">
+                      <span class="text-default">Jane Pearson</span>
+                      <small class="text-muted d-block mt-1">Administrator</small>
+                    </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                                <a class="dropdown-item" href="#">
+                                    <i class="dropdown-icon fe fe-settings"></i> Settings
+                                </a>
+
+                                <a class="dropdown-item" href="./login">
+                                    <i class="dropdown-icon fe fe-log-out"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
@@ -60,20 +80,55 @@
                 <div class="row align-items-center">
 
                     <div class="col-lg order-lg-first">
-                          <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
-                             <li class="nav-item">
-                                <a href="./home" class="nav-link"><i class="fe fe-home"></i> Home</a>
+                        <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                            <li class="nav-item">
+                                <a href="./society_home" class="nav-link active"><i class="fe fe-home"></i> Society Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"
+                                   aria-expanded="false"><i class="fe fe-file"></i> Receipt & Payment</a>
+                                <div class="dropdown-menu dropdown-menu-arrow" x-placement="bottom-start"
+                                     style="position: absolute; transform: translate3d(12px, 55px, 0px); top: 0px; left: 0px; will-change: transform;">
+
+                                    <a href="/login" class="dropdown-item  "><i class="fa fa-sign-in"></i> Receipt</a>
+                                    <a href="./register" class="dropdown-item"><i class="fa fa-address-book"></i> Payment</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"
+                                   aria-expanded="false"><i class="fe fe-file"></i> Reports</a>
+                                <div class="dropdown-menu dropdown-menu-arrow" x-placement="bottom-start"
+                                     style="position: absolute; transform: translate3d(12px, 55px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                    <a href="./register" class="dropdown-item "><i class="fa fa-address-book"></i> Cashbook</a>
+                                      <a href="./register" class="dropdown-item "><i class="fa fa-address-book"></i> Trial
+                                    Balance</a>
+                                    <a href="./register" class="dropdown-item "><i class="fa fa-address-book"></i> Profit &
+                                    Loss</a>
+                                     <a href="./register" class="dropdown-item "><i class="fa fa-address-book"></i> Balance
+                                    Sheet</a>
+                                    <a href="./register" class="dropdown-item "><i class="fa fa-address-book"></i>
+                                        Annual Reports</a>
+                                    <a href="./register" class="dropdown-item"><i class="fa fa-address-book"></i>
+                                        Auditor Reports</a>
+
+                                </div>
                             </li>
 
                             <li class="nav-item">
-                                <a href="./register" class="nav-link"><i class="fa fa-registered"></i> Register</a>
+                                <a href="./register" class="nav-link"><i class="fa fa-address-book"></i> Budget</a>
                             </li>
+
                             <li class="nav-item">
-                                <a href="./finger" class="nav-link"><i class="fa fa-registered"></i> Finger</a>
+                                <a href="./register" class="nav-link"><i class="fa fa-address-book"></i> Account Head
+                                    Information</a>
                             </li>
+
+
+
                             <li class="nav-item">
-                                <a href="./report" class="nav-link active"><i class="fa fa-reorder"></i> Report</a>
+                                <a href="./register" class="nav-link"><i class="fa fa-address-book"></i> Personal Ledger</a>
                             </li>
+
 
                         </ul>
                     </div>
@@ -82,114 +137,9 @@
         </div>
         <div class="my-3 my-md-5">
             <div class="container">
+
                 <div class="row">
-                    <div class="col-12">
-                        <form action="./home" method="get" class="card">
-                            <div class="card-header">
-                                <div class="row" style="width:100%;">
-                                    <div class="col-6" style="margin-top:10px;">
-                                        <h3 class="card-title">Report</h3>
-                                    </div>
-                                </div>
-                            </div>
 
- <script>
-    $(document).ready(function() {
-    $('#example').DataTable();
-} );
-</script>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tbody>
-           <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
-</table>
-
-
-                            <div class="card-footer text-right">
-                                <div class="d-flex">
-
-                                    <button type="submit" class="btn btn-primary ml-auto">Home <i
-                                            class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-
-
-                        </form>
-                        <script>
-                require(['jquery', 'selectize'], function ($, selectize) {
-                    $(document).ready(function () {
-                        $('#input-tags').selectize({
-                            delimiter: ',',
-                            persist: false,
-                            create: function (input) {
-                                return {
-                                    value: input,
-                                    text: input
-                                }
-                            }
-                        });
-
-                        $('#select-beast').selectize({});
-
-                        $('#select-users').selectize({
-                            render: {
-                                option: function (data, escape) {
-                                    return '<div>' +
-                                        '<span class="image"><img src="' + data.image + '" alt=""></span>' +
-                                        '<span class="title">' + escape(data.text) + '</span>' +
-                                        '</div>';
-                                },
-                                item: function (data, escape) {
-                                    return '<div>' +
-                                        '<span class="image"><img src="' + data.image + '" alt=""></span>' +
-                                        escape(data.text) +
-                                        '</div>';
-                                }
-                            }
-                        });
-
-                        $('#select-countries').selectize({
-                            render: {
-                                option: function (data, escape) {
-                                    return '<div>' +
-                                        '<span class="image"><img src="' + data.image + '" alt=""></span>' +
-                                        '<span class="title">' + escape(data.text) + '</span>' +
-                                        '</div>';
-                                },
-                                item: function (data, escape) {
-                                    return '<div>' +
-                                        '<span class="image"><img src="' + data.image + '" alt=""></span>' +
-                                        escape(data.text) +
-                                        '</div>';
-                                }
-                            }
-                        });
-                    });
-                });
-
-
-
-                        </script>
-                    </div>
 
                 </div>
             </div>

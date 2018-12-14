@@ -1,0 +1,211 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(http-equiv='Content-Language', content='en')
+    meta(name='msapplication-TileColor', content='#2d89ef')
+    meta(name='theme-color', content='#4188c9')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black-translucent')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='mobile-web-app-capable', content='yes')
+    meta(name='HandheldFriendly', content='True')
+    meta(name='MobileOptimized', content='320')
+    link(rel='icon', href='./favicon.ico', type='image/x-icon')
+    link(rel='shortcut icon', type='image/x-icon', href='./favicon.ico')
+    // Generated: 2018-04-16 09:29:05 +0200
+    title
+      | Homepage - tabler.github.io - a responsive, flat and full featured admin template
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&subset=latin-ext')
+    script(src='./assets/js/require.min.js')
+    script.
+      requirejs.config({
+      baseUrl: '.'
+      });
+    // Dashboard Core
+    link(href='./assets/css/dashboard.css', rel='stylesheet')
+    script(src='./assets/js/dashboard.js')
+    // c3.js Charts Plugin
+    link(href='./assets/plugins/charts-c3/plugin.css', rel='stylesheet')
+    script(src='./assets/plugins/charts-c3/plugin.js')
+    // Google Maps Plugin
+    link(href='./assets/plugins/maps-google/plugin.css', rel='stylesheet')
+    script(src='./assets/plugins/maps-google/plugin.js')
+    // Input Mask Plugin
+    script(src='./assets/plugins/input-mask/plugin.js')
+  body
+    .page
+      .page-main
+        .header.py-4
+          .container
+            .d-flex
+              a.header-brand(href='./index.html')
+                img.header-brand-img(src='img/profile.png', alt='tabler logo')
+                | S3
+        #headerMenuCollapse.header.collapse.d-lg-flex.p-0
+          .container
+            .row.align-items-center
+              .col-lg.order-lg-first
+                ul#myTab.nav.nav-tabs.justify-content-end(role='tablist')
+                  li.nav-item
+                    a.nav-link(href='./home')
+                      i.fe.fe-home
+                      |  Home
+                  li.nav-item
+                    a.nav-link(href='./register')
+                      i.fa.fa-registered
+                      |  Register
+                  li.nav-item
+                    a.nav-link(href='./finger')
+                      i.fa.fa-registered
+                      |  Finger
+                  li.nav-item
+                    a.nav-link.active(href='./report')
+                      i.fa.fa-reorder
+                      |  Report
+        .my-3.my-md-5
+          .container
+            .row
+              .col-12
+                form.card(action='./home', method='get')
+                  .card-header
+                    .row(style='width:100%;')
+                      .col-6(style='margin-top:10px;')
+                        h3.card-title Report
+                  script.
+                    $(document).ready(function() {
+                    $('#example').DataTable();
+                    } );
+                  table#example.table.table-striped.table-bordered(style='width:100%')
+                    thead
+                        tr
+                            th Name
+                            th Class
+                            th Roll no.
+                            th Email
+
+                    tbody
+
+
+                    each item in report
+                        tr
+                            td=item.name
+
+                            td=item.class
+
+                            td=item.rollno
+                            td=item.email
+                    tfoot
+                        tr
+                          th Name
+                          th Class
+                          th Roll no.
+                          th Email
+
+                  .card-footer.text-right
+                    .d-flex
+                      button.btn.btn-primary.ml-auto(type='submit')
+                        | Home
+                        i.fa.fa-chevron-circle-right(aria-hidden='true')
+                script.
+                  require(['jquery', 'selectize'], function ($, selectize) {
+                  $(document).ready(function () {
+                  $('#input-tags').selectize({
+                  delimiter: ',',
+                  persist: false,
+                  create: function (input) {
+                  return {
+                  value: input,
+                  text: input
+                  }
+                  }
+                  });
+                  $('#select-beast').selectize({});
+                  $('#select-users').selectize({
+                  render: {
+                  option: function (data, escape) {
+                  return '<div>' +
+                  '<span class="image"><img src="' + data.image + '" alt=""></span>' +
+                  '<span class="title">' + escape(data.text) + '</span>' +
+                  '</div>';
+                  },
+                  item: function (data, escape) {
+                  return '<div>' +
+                  '<span class="image"><img src="' + data.image + '" alt=""></span>' +
+                  escape(data.text) +
+                  '</div>';
+                  }
+                  }
+                  });
+                  $('#select-countries').selectize({
+                  render: {
+                  option: function (data, escape) {
+                  return '<div>' +
+                  '<span class="image"><img src="' + data.image + '" alt=""></span>' +
+                  '<span class="title">' + escape(data.text) + '</span>' +
+                  '</div>';
+                  },
+                  item: function (data, escape) {
+                  return '<div>' +
+                  '<span class="image"><img src="' + data.image + '" alt=""></span>' +
+                  escape(data.text) +
+                  '</div>';
+                  }
+                  }
+                  });
+                  });
+                  });
+      .footer
+        .container
+          .row
+            .col-lg-8
+              .row
+                .col-6.col-md-3
+                  ul.list-unstyled.mb-0
+                    li
+                      a(href='#') First link
+                    li
+                      a(href='#') Second link
+                .col-6.col-md-3
+                  ul.list-unstyled.mb-0
+                    li
+                      a(href='#') Third link
+                    li
+                      a(href='#') Fourth link
+                .col-6.col-md-3
+                  ul.list-unstyled.mb-0
+                    li
+                      a(href='#') Fifth link
+                    li
+                      a(href='#') Sixth link
+                .col-6.col-md-3
+                  ul.list-unstyled.mb-0
+                    li
+                      a(href='#') Other link
+                    li
+                      a(href='#') Last link
+            .col-lg-4.mt-4.mt-lg-0
+              | Premium and Open Source dashboard template with responsive and high quality UI. For Free!
+      footer.footer
+        .container
+          .row.align-items-center.flex-row-reverse
+            .col-auto.ml-lg-auto
+              .row.align-items-center
+                .col-auto
+                  ul.list-inline.list-inline-dots.mb-0
+                    li.list-inline-item
+                      a(href='./docs/index.html') Documentation
+                    li.list-inline-item
+                      a(href='./faq.html') FAQ
+                .col-auto
+                  a.btn.btn-outline-primary.btn-sm(href='https://github.com/tabler/tabler')
+                    | Source
+                    | code
+            .col-12.col-lg-auto.mt-3.mt-lg-0.text-center
+              | Copyright © 2018
+              a(href='.') Tabler
+              | . Theme by
+              a(href='https://codecalm.net', target='_blank') codecalm.net
+              |                     All rights reserved.
