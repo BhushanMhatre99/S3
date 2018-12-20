@@ -40,19 +40,16 @@ html(lang='en', dir='ltr')
       .page-main
         .header.py-4
           .container
-            .d-flex
-              a.header-brand(href='./index.html')
-                img.header-brand-img(src='img/profile.png', alt='tabler logo')
-                | S3
+           .d-flex
+            a.header-brand(href='./index.html')
+            img.header-brand-img(src='./demo/brand/company.png', alt='tabler logo')
+            | S3
         #headerMenuCollapse.header.collapse.d-lg-flex.p-0
           .container
             .row.align-items-center
               .col-lg.order-lg-first
                 ul#myTab.nav.nav-tabs.justify-content-end(role='tablist')
-                  li.nav-item
-                    a.nav-link(href='./home')
-                      i.fe.fe-home
-                      |  Home
+
                   li.nav-item
                     a.nav-link(href='./register')
                       i.fa.fa-registered
@@ -104,11 +101,10 @@ html(lang='en', dir='ltr')
                           th Roll no.
                           th Email
 
-                  .card-footer.text-right
-                    .d-flex
-                      button.btn.btn-primary.ml-auto(type='submit')
-                        | Home
-                        i.fa.fa-chevron-circle-right(aria-hidden='true')
+
+
+
+
                 script.
                   require(['jquery', 'selectize'], function ($, selectize) {
                   $(document).ready(function () {
@@ -157,37 +153,7 @@ html(lang='en', dir='ltr')
                   });
                   });
                   });
-      .footer
-        .container
-          .row
-            .col-lg-8
-              .row
-                .col-6.col-md-3
-                  ul.list-unstyled.mb-0
-                    li
-                      a(href='#') First link
-                    li
-                      a(href='#') Second link
-                .col-6.col-md-3
-                  ul.list-unstyled.mb-0
-                    li
-                      a(href='#') Third link
-                    li
-                      a(href='#') Fourth link
-                .col-6.col-md-3
-                  ul.list-unstyled.mb-0
-                    li
-                      a(href='#') Fifth link
-                    li
-                      a(href='#') Sixth link
-                .col-6.col-md-3
-                  ul.list-unstyled.mb-0
-                    li
-                      a(href='#') Other link
-                    li
-                      a(href='#') Last link
-            .col-lg-4.mt-4.mt-lg-0
-              | Premium and Open Source dashboard template with responsive and high quality UI. For Free!
+
       footer.footer
         .container
           .row.align-items-center.flex-row-reverse

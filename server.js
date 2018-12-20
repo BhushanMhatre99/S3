@@ -43,7 +43,7 @@ app.get('/login',function(req,res){
 
    res.sendFile(__dirname + '/views/login.html');
 });
-app.get('/finger',function(req,res){
+/*app.get('/finger',function(req,res){
 
 
    res.sendFile(__dirname + '/views/finger.html');
@@ -53,23 +53,9 @@ app.get('/register',function(req,res){
 
 
    res.sendFile(__dirname + '/views/register.html');
-});
+});*/
 
-app.get('/finger',function(req,res){
-
-
-   res.sendFile(__dirname + '/views/finger.html');
-});
-
-
-  app.get('/hello', function (req, res) {
-  res.render('hello', { title: 'Hello', message: 'Hello there!' })
-});
-
-
-
-app.post('/register', function(req, res){
-
+app.post('/validate_login', function(req, res){
 var username= req.body.username;
 var password = req.body.password;
 console.log(username);
@@ -89,59 +75,47 @@ if (error) {
       }
       else{
     console.log("erroror");
-     res.sendFile(__dirname + '/login.html')
+
+     res.sendFile(__dirname + '/views/login.html')
     }
   }
 
 }
 });
+});
 
+
+
+
+app.get('/register', function(req, res){
+
+res.sendFile(__dirname + '/views/register.html')
 
 });
 
-app.post('/report', function(req, res){
-var form = new formidable.IncomingForm();
+app.get('/report', function(req, res){
+/*var form = new formidable.IncomingForm();
    form.parse(req, function (err, fields, files) {
       var oldpath = files.finger.path;
       var newpath = 'Register_thumb/' + files.finger.name;
       fs.createReadStream(oldpath).pipe(fs.createWriteStream(newpath));
-      });
+      });*/
             con.query('select* from student', function(err,recordset){
         if(err)
-        console.log(err)
+        console.log(err).
+
         else
         res.render('report',{report:recordset});
 
 });
-   res.sendFile(__dirname + '/views/report.html');
-});
-
-app.get('/report',function(req,res){
-con.query('select* from student', function(err,recordset){
-if(err)
-console.log(err)
-else
-res.render('report',{report:recordset});
-
-});
-
-});
-
-app.post('/balance_sheet_payable', function(req, res){
-   res.sendFile(__dirname + '/views/balance_sheet_payable.html');
+ res.sendFile(__dirname + '/views/report.jade');
 });
 
 
-app.post('/balance_sheet_receivable', function(req, res){
-   res.sendFile(__dirname + '/views/balance_sheet_receivable.html');
-});
 
-app.post('/review_registration', function(req, res){
-   res.sendFile(__dirname + '/views/review_registration.html');
-});
 
-app.post('/finger', function(req, res){
 
+app.post('/validate_registration', function(req, res){
 var name=req.body.name;
   var email=req.body.email;
   var cls=req.body.cls;
@@ -171,9 +145,53 @@ res.sendFile(__dirname + '/views/finger.html');
 
 
 
-app.post('/society_home', function(req, res){
-   res.sendFile(__dirname + '/views/society_home.html');
+
+app.get('/finger', function(req, res){
+
+/*var name=req.body.name;
+  var email=req.body.email;
+  var cls=req.body.cls;
+  var rno=req.body.rno;
+  var finger=req.body.finger;
+
+console.log(req.body);
+
+  console.log('You sent the name "' + name+'".\n');
+
+
+  var sql = "INSERT INTO student (name , email,class ,rollno, finger) VALUES ('"+name+"', '"+email+"','"+cls+"','"+rno+"','"+finger+"')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+    });
+
+    var form = new formidable.IncomingForm();
+   form.parse(req, function (err, fields, files) {
+      var oldpath = files.finger.path;
+      var newpath = 'thumb/' + files.finger.name;
+      fs.createReadStream(oldpath).pipe(fs.createWriteStream(newpath));
+      });*/
+
+res.sendFile(__dirname + '/views/finger.html');
 });
+
+app.post('/validate_report', function(req, res){
+var form = new formidable.IncomingForm();
+   form.parse(req, function (err, fields, files) {
+      var oldpath = files.finger.path;
+      var newpath = 'Register_thumb/' + files.finger.name;
+      fs.createReadStream(oldpath).pipe(fs.createWriteStream(newpath));
+      });
+            con.query('select* from student', function(err,recordset){
+        if(err)
+        console.log(err)
+        else
+        res.render('report',{report:recordset});
+
+});
+   res.sendFile(__dirname + '/views/report.jade');
+});
+
 
 app.listen(3000);
 
