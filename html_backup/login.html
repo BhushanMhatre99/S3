@@ -45,75 +45,79 @@
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
+                    <a class="header-brand" href="./home">
                         <img src="img/profile.png" class="header-brand-img" alt="tabler logo">S3
                     </a>
 
                 </div>
             </div>
         </div>
-        <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+         <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
             <div class="container">
                 <div class="row align-items-center">
 
                     <div class="col-lg order-lg-first">
-
-                        <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
-                             <li class="nav-item">
+                        <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                            <li class="nav-item">
                                 <a href="./home" class="nav-link"><i class="fe fe-home"></i> Home</a>
                             </li>
-
                             <li class="nav-item">
-                                <a href="./register" class="nav-link active"><i class="fa fa-registered"></i> Register</a>
+                                <a href="/login" class="nav-link  active"><i class="fa fa-sign-in"></i> Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="./finger" class="nav-link"><i class="fa fa-registered"></i> Finger</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./report" class="nav-link"><i class="fa fa-reorder"></i> Report</a>
-                            </li>
+                       <!-- <li class="nav-item">
+                                <a href="./register" class="nav-link"><i class="fa fa-address-book"></i> Register</a>
+                            </li>-->
 
                         </ul>
-
                     </div>
                 </div>
             </div>
         </div>
         <div class="my-3 my-md-5">
             <div class="container">
-            <div class="row">
+
+         <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert"></button>
+    <strong>Danger!</strong>
+  </div>
+                <div class="row">
               <div class="col-12">
-                <form action="./finger" method="post" class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">Student Registration</h3>
-                  </div>
+                <form action="./validate_login" method="post" class="card">
+                    <div class="card-header">
+                                <div class="row" style="width:100%;">
+                                    <div class="col-6" style="margin-top:10px;">
+                                       <h3 class="card-title">Login</h3>
+                                    </div>
+
+                                </div>
+                            </div>
+
                   <div class="card-body">
                     <div class="row">
                       <div class="col-md-12">
 
-                        <div class="form-group">
-                          <label class="form-label">Student Name</label>
-                          <input class="form-control" name="name"  placeholder=" Name..." type="text">
-                               <br><label class="form-label">Email</label>
-                          <input class="form-control" name="email" placeholder="Email..." type="text">
-                            <br><label class="form-label">Class</label>
-                          <input class="form-control" name="cls"  placeholder="Class..." type="text">
-                              <br><label class="form-label">Roll No</label>
-                          <input class="form-control" name="rno"  placeholder="Roll no..." type="text">
-                            <br><label class="form-label">Upload finger print</label>
-                            <input type="file" name="finger">
-                        </div>
+        <div class="form-group">
+            <lable class="form-lable">username</lable>
+            <input type="text" class="form-control" name="username" placeholder="username.....">
+           <br> <lable class="form-lable">password</lable>
+            <input type="password" class="form-control" name="password" placeholder="enter password...">
+        </div>
+
+
+<div class="text-center">
+     <button type="submit" class="btn btn-info center-block"  data-toggle="modal">Login</button>
+
+</div>
+
+
+                  </div>
 
                     </div>
 
                   </div>
-                </div>
-                <div class="card-footer text-right">
-                  <div class="d-flex">
 
-                    <button type="submit" class="btn btn-primary ml-auto">Next <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></button>
-                  </div>
-                </div>
+
+
               </form>
               <script>
                 require(['jquery', 'selectize'], function ($, selectize) {
@@ -170,69 +174,17 @@
             </div>
 
           </div>
-        </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">First link</a></li>
-                                <li><a href="#">Second link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">Third link</a></li>
-                                <li><a href="#">Fourth link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">Fifth link</a></li>
-                                <li><a href="#">Sixth link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#">Other link</a></li>
-                                <li><a href="#">Last link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-4 mt-lg-0">
-                    Premium and Open Source dashboard template with responsive and high quality UI. For Free!
-                </div>
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <div class="row align-items-center flex-row-reverse">
-                <div class="col-auto ml-lg-auto">
-                    <div class="row align-items-center">
-                        <div class="col-auto">
-                            <ul class="list-inline list-inline-dots mb-0">
-                                <li class="list-inline-item"><a href="./docs/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="./faq.html">FAQ</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://github.com/tabler/tabler" class="btn btn-outline-primary btn-sm">Source
-                                code</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="footer">
+
                 <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
                     Copyright © 2018 <a href=".">Tabler</a>. Theme by <a href="https://codecalm.net" target="_blank">codecalm.net</a>
                     All rights reserved.
                 </div>
             </div>
-        </div>
+
     </footer>
 </div>
 </body>

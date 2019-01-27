@@ -61,15 +61,22 @@ html(lang='en', dir='ltr')
                     a.nav-link(href='./finger')
                       i.fa.fa-registered
                       |  Finger
-                  li.nav-item
-                    a.nav-link.active(href='./report')
-                      i.fa.fa-reorder
+                  li.nav-item.dropdown
+                    a.nav-link.active(href='javascript:void(0)', data-toggle='dropdown', aria-expanded='false')
+                      i.fe.fe-file
                       |  Report
+                    .dropdown-menu.dropdown-menu-arrow(x-placement='bottom-start', style='position: absolute; transform: translate3d(12px, 55px, 0px); top: 0px; left: 0px; will-change: transform;')
+                      a.dropdown-item(href='/report')
+                        i.fa.fa-sign-in
+                        |  Student list
+                      a.dropdown-item(href='attendence')
+                        i.fa.fa-address-book
+                        |  Attendence
         .my-3.my-md-5
           .container
             .row
               .col-12
-                form.card(action='./home', method='get')
+                form.card(action='./home', method='post')
                   .card-header
                     .row(style='width:100%;')
                       .col-6(style='margin-top:10px;')
@@ -80,30 +87,18 @@ html(lang='en', dir='ltr')
                     } );
                   table#example.table.table-striped.table-bordered(style='width:100%')
                     thead
-                        tr
-                            th Name
-                            th Class
-                            th Roll no.
-                            th Email
-
+                      tr
+                        th Name
+                        th Class
+                        th Email
+                        th Roll no.
                     tbody
-
-
                     each item in report
-                        tr
-                            td=item.name
-
-                            td=item.class
-
-                            td=item.rollno
-                            td=item.email
-                    tfoot
-                        tr
-                          th Name
-                          th Class
-                          th Roll no.
-                          th Email
-
+                      tr
+                         td=item.name
+                         td=item.class
+                         td=item.email
+                         td=item.rollno
                   .card-footer.text-right
                     .d-flex
                       button.btn.btn-primary.ml-auto(type='submit')
