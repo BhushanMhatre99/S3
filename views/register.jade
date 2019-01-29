@@ -17,7 +17,7 @@ html(lang='en', dir='ltr')
     // Generated: 2018-04-16 09:29:05 +0200
     title
       | Homepage - tabler.github.io - a responsive, flat and full featured admin template
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&subset=latin-ext')
     script(src='./assets/js/require.min.js')
     script.
@@ -55,7 +55,7 @@ html(lang='en', dir='ltr')
                       |  Register
                   li.nav-item
                     a.nav-link(href='./finger')
-                      i.fa.fa-registered
+                      i.fab.fa-facebook-f
                       |  Finger
                   li.nav-item.dropdown
                     a.nav-link(href='javascript:void(0)', data-toggle='dropdown', aria-expanded='false')
@@ -63,17 +63,21 @@ html(lang='en', dir='ltr')
                       |  Report
                     .dropdown-menu.dropdown-menu-arrow(x-placement='bottom-start', style='position: absolute; transform: translate3d(12px, 55px, 0px); top: 0px; left: 0px; will-change: transform;')
                       a.dropdown-item(href='/report')
-                        i.fa.fa-sign-in
+                        i.fas.fa-list-ul
                         |  Student list
                       a.dropdown-item(href='attendence')
                         i.fa.fa-address-book
                         |  Attendence
                   li.nav-item
                     a.nav-link(href='./login')
-                      i.fa.fa-reorder
+                      i.fas.fa-sign-out-alt
                       |  Logout
         .my-3.my-md-5
           .container
+            if register_successful
+                .alert.alert-success
+                  button.close(type='button', data-dismiss='alert')
+                  strong Student Register Successfully!
             .row
               .col-12
                 form.card(action='./register_0', method='post')
@@ -149,8 +153,4 @@ html(lang='en', dir='ltr')
                   });
       .footer
         .col-12.col-lg-auto.mt-3.mt-lg-0.text-center
-          | Copyright © 2018
-          a(href='.') Tabler
-          | . Theme by
-          a(href='https://codecalm.net', target='_blank') codecalm.net
-          |                     All rights reserved.
+          p.text-dark Project by Third year computer
