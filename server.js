@@ -183,7 +183,7 @@ app.post('/register_finger_0', function(req, res){
                                                     }
                                              });
 
-                                           res.render('register');
+                                           res.render('register',{register_successful:true});
                                         });
                                     });
 
@@ -269,7 +269,7 @@ app.post('/attendance', function(req, res){
                                                                         console.log('user matched')
 
                                                                         //store in DB
-                                                                        var sql = "INSERT INTO `attendence`(`student_id`,`date`,`Is_leave`,`Is_holiday`,`is_delete`,`update`,`add`,`reason`,`finger`,`is_present`) VALUES ('"+rows[i].student_id+"',NOW(),'0','0','0',NOW(),NOW(),'','','1')";
+                                                                        var sql = "INSERT INTO `attendence`(`student_id`,`name`,`date`,`Is_leave`,`Is_holiday`,`is_delete`,`update`,`add`,`reason`,`finger`,`is_present`) VALUES ('"+rows[i].student_id+"','"+rows[i].name+"',NOW(),'0','0','0',NOW(),NOW(),'','','1')";
                                                                         con.query(sql, function (err, result) {
                                                                             if (err) throw err;
                                                                             res.render('finger',{is_matched_flag:true})
