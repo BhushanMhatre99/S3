@@ -57,10 +57,6 @@ html(lang='en', dir='ltr')
                     a.nav-link.active(href='/login')
                       i.fa.fa-sign-in
                       |  Login
-                  //
-                    <li class="nav-item">
-                    <a href="./register" class="nav-link"><i class="fa fa-address-book"></i> Register</a>
-                    </li>
         .my-3.my-md-5
           .container
             if login_failed
@@ -79,10 +75,10 @@ html(lang='en', dir='ltr')
                       .col-md-12
                         .form-group
                           lable.form-lable username
-                          input.form-control(type='text', name='username', placeholder='username.....')
+                          input.form-control(type='text', name='username', placeholder='username.....',required)
                           br
                           lable.form-lable password
-                          input.form-control(type='password', name='password', placeholder='enter password...')
+                          input.form-control(type='password', name='password', placeholder='enter password...',required)
                         .text-center
                           button.btn.btn-info.center-block(type='submit', data-toggle='modal') Login
                 script.

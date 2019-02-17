@@ -70,18 +70,22 @@ html(lang='en', dir='ltr')
                         |  Attendence
                   li.nav-item
                     a.nav-link(href='./login')
-                      i.fa.fa-reorder
+                      i.fas.fa-sign-out-alt
                       |  Logout
         .my-3.my-md-5
           .container
-            if is_matched_flag
+            if is_already_attend == false & is_matched_flag == true
                 .alert.alert-success
                   button.close(type='button', data-dismiss='alert')
                   strong Updated Attendance Successful!
-            if is_matched_flag == false
+            if is_already_attend == false & is_matched_flag == false
                 .alert.alert-danger
                   button.close(type='button', data-dismiss='alert')
                   strong Student not found! Please try again.
+            if is_already_attend == true & is_matched_flag == false
+                .alert.alert-danger
+                  button.close(type='button', data-dismiss='alert')
+                  strong already  attendent  .
             .row
               .col-12
                 form.card(action='./attendance', enctype='multipart/form-data', method='post')
